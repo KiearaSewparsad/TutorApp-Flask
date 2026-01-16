@@ -45,5 +45,9 @@ def index():
 def thank_you():
     return render_template('thank_you.html')
 
+@app.route('/admin')
+def admin():
+    return render_template('admin.html', applications=applications)
+
 if __name__ == '__main__':
     app.run(debug=True)

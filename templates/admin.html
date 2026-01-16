@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Admin Dashboard</title>
+    </head>
+    <body>
+        <h1>Admin Dashboard</h1>
+        {% if applications %}
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Surname</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Subjects</th>
+                <th>Experience</th>
+                <th>CV</th>
+            </tr>
+            {% for app in applications %}
+            <tr>
+                <td>{{app.name}}</td>
+                <td>{{app.surname}}</td>
+                <td>{{app.email}}</td>
+                <td>{{app.phone}}</td>
+                <td>{{app.subjects}}</td>
+                <td>{{app.experience}}</td>
+                <td>
+                    {% if app.cv %}
+                    <a href="{{ url_for('static', filename='uploads/' + app.cv) }}" target="_blank">Download CV</a>
+                    {% else %}
+                    No CV
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+        {% else %}
+        <p>No applications submitted yet.</p>
+        {% endif %}
+    </body>
+</html>
