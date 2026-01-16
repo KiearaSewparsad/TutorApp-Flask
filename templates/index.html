@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tutor Application</title>
+    </head>
+    <body>
+        <h1>Welcome to Tutor Application Web App</h1>
+        <h2>Apply to become a Tutor</h2>
+        <br>
+        <form method="POST" enctype="multipart/form-data">
+            <label>Name:</label><br>
+            <input type="text" name="name" required><br><br>
+
+            <label>Surname:</label><br>
+            <input type="text" name="surname" required><br><br>
+
+            <label>Email:</label><br>
+            <input type="email" name="email" required><br><br>
+
+            <label>Phone:</label><br>
+            <input type="number" name="phone" required><br><br>
+
+            <label>Subjects you can tutor:</label><br>
+            <input type="text" name="subjects" required><br><br>
+
+            <label>Years of experience: </label><br>
+            <input type="number" name="experience" required min="1"><br><br>
+
+            <label>Upload your CV (PDF/DOCX):</label><br>
+            <input type="file" name="cv" accept=".pdf, .doc, docx" required><br><br>
+
+            <button type="submit">Submit Application</button>
+        </form>
+    </body>
+</html>
